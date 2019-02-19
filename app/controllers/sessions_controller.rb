@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if session[:name].nil?
+    if session[:name].nil? || params[:name] == ''
             binding.pry
       redirect_to '/login'
     else
